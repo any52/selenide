@@ -1,7 +1,6 @@
-package gure.qa;
+package guru.qa;
 
 public class StandardOperations {
-
     public static void main(String[] args) {
         int a = 100;
         int b = 300;
@@ -41,5 +40,4 @@ public class StandardOperations {
         System.out.println("Combination string, int and double:");
         System.out.println("Hello, world!" + 10.5+1);
     }
-
 }
