@@ -5,6 +5,10 @@ import guru.qa.pages.components.CalendarComponent;
 import guru.qa.pages.components.RegistrationResultsModal;
 
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
@@ -24,7 +28,7 @@ public class RegistrationPage {
             genderInput = $("#genterWrapper"),
             mobileNumber = $("#userNumber"),
             sublectInput = $("#subjectsInput"),
-            hobbyInput =  $("#hobbiesWrapper"),
+            hobbyInput = $("#hobbiesWrapper"),
             addressInput = $("#currentAddress"),
             stateInput = $("#state"),
             cityInput = $("#city"),
@@ -91,7 +95,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setBirthDate(String day, String month, String year) {
+    public RegistrationPage setBirthDate(String day, String month, String year) throws ParseException {
         dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
 
