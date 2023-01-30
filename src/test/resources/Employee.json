@@ -1,0 +1,22 @@
+{
+  "id": 43,
+  "name": "David",
+  "permanent": true,
+  "address": {
+    "street": "Albany Dr",
+    "city": "San Jose",
+    "zipcode": 95129
+  },
+  "phoneNumbers": [
+    12345623,
+    98765423
+  ],
+   "cities": [
+    "Los Angeles",
+    "Chikago"
+  ],
+  "properties": {
+    "age": "39 years",
+    "salary": "5000 USD"
+  }
+}
