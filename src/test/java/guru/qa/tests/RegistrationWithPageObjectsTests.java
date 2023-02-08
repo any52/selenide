@@ -1,17 +1,26 @@
 package guru.qa.tests;
 
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.text.ParseException;
+import static io.qameta.allure.Allure.step;
 
-public class RegistrationWithPageObjectsTests extends TestBase {
+public class RegistrationWithPageObjectsTests extends TestBaseExtended {
 
     @Test
-    void successfulRegistrationTest() throws ParseException {
+    @Owner("almoiseeva")
+    @Tag("remote")
+    @DisplayName("Check filling form of registration student")
+    void successfulRegistrationTest()  {
         TestData testData = new TestData();
 
-        registrationPage.openPage()
-                .setFirstName(testData.firstName)
+        step("Open form of registration", () -> {
+        registrationPage.openPage();
+        });
+        step("Fill form of registration", () -> {
+        registrationPage.setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
                 .setGender(testData.gender)
@@ -24,7 +33,8 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setState(testData.state)
                 .setCity(testData.city)
                 .submitRegistrationData();
-
+        });
+        step("Verify results", () -> {
         registrationPage.verifyResultsModalAppears().verifyResult("Student Name", testData.firstName + " " + testData.lastName)
                 .verifyResult("Student Email", testData.email)
                 .verifyResult("Gender", testData.gender)
@@ -36,6 +46,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .verifyResult("Picture", testData.nameFile)
                 .verifyResult("Address", testData.currentAddress)
                 .verifyResult("State and City", testData.state + " " + testData.city);
+        });
 
     }
 }
