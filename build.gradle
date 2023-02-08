@@ -66,7 +66,7 @@ task remote_test(type: Test) {
     }
 }
 
-task remote_param_test(type: Test) {
+task param_test(type: Test) {
     useJUnitPlatform {
         includeTags("parameters")
     }
