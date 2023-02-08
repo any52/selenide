@@ -12,6 +12,7 @@ public class RegistrationWithPageObjectsTests extends TestBaseExtended {
     @Test
     @Owner("almoiseeva")
     @Tag("remote")
+    @Tag("parameters")
     @DisplayName("Check filling form of registration student")
     void successfulRegistrationTest()  {
         TestData testData = new TestData();
