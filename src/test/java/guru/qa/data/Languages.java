@@ -1,2 +1,5 @@
-package guru.qa.data;public enum Languages {
+package guru.qa.data;
+
+public enum Languages {
+    English, Italiano
 }
